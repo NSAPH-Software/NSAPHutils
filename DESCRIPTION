@@ -1,0 +1,9 @@
+Package: NSAPHutils
+Title: Tools For NSAPH Researchers
+Version: 0.0.0.9000
+Authors@R: person("Ben", "Sabath", email = "mbsabath@hsph.harvard.edu", role = c("aut", "cre"))
+Description: This package provides tools to aid researchers working on the RCE.
+Depends: R (>= 3.5.2)
+License: GPLv3
+Encoding: UTF-8
+LazyData: true
