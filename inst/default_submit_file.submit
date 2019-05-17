@@ -1,0 +1,37 @@
+# Documentation
+# https://rce-docs.hmdc.harvard.edu/book/batch-processing-basics
+
+#### Uncomment and fill in your email to receive notifications about your jobs #####
+# notification = Always
+# notify_user = user@fake-email.com
+
+# Optional
+request_cpus = 1
+# request_disk = 500GB
+request_memory = 6GB
+
+# Enter the path to the R program.
+executable = /usr/local/bin/R
+
+# Specify any arguments you want to pass to the executable
+# to make R not save or restore workspaces, and to
+# run as quietly as possible
+arguments = --no-save --no-restore --slave --args $(Process)
+
+# Specify the relative path to the input file
+input = script.R
+
+# Specify where to output any results printed by your program
+# The folder (output in this example) must already exist
+output = batch_output/r_out.$(Process)
+
+# Specify where to save any errors returned by your program.
+error = batch_output/r_error.$(Process)
+
+log = batch_output/r_log.txt
+
+
+# Number of processes to request
+# Use 'Queue 1' if you want to run a single R file
+# It starts at zero, so here: 0, 1, 2, 3, 4
+Queue 1
