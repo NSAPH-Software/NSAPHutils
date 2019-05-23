@@ -38,6 +38,11 @@ get_cpus <- function() {
   return(ncpus)
 }
 
+#' Set Data Table and FST thread count
+#'
+#' @param nthreads the number of threads to use
+#'
+#' @export
 set_threads <- function(nthreads = get_cpus()) {
   setDTthreads(nthreads)
   threads_fst(nr_of_threads = nthreads)
