@@ -49,3 +49,39 @@ download_data_requests <- function(out_path=".") {
   }
 }
 
+#' Convert a downloaded Qualtrics csv to a project list markdown file
+#'
+#' @param file path to the csv file containing data requests
+#' @param outfile name of the file to be produced
+#'
+#'
+#' @import pander
+#' @export
+data_requests_to_markdown <- function(file = "NSAPH Health Data Request Form.csv", outfile = "project_list.md") {
+  data <- read.csv(file, stringsAsFactors=F)
+  data <- data[3:nrow(data),]
+  out <- list()
+  for (i in 1:nrow(data)) {
+    req <- list()
+    obs <- data[i,]
+    req[[obs$name]] <- list()
+    req[[obs$name]][["email"]] <- obs$email
+    if(as.numeric(obs$all_years)){
+      req[[obs$name]][["years"]] <- "1999-2016"
+    } else {
+      req[[obs$name]][["years"]] <- obs$years
+    }
+    req[[obs$name]][["outcome"]] <- obs$outcome
+    req[[obs$name]][["comorbidities"]] <- obs$comorbidities
+    req[[obs$name]][["data_source"]] <- obs$data_source
+    req[[obs$name]][["geography"]] <- obs$geography
+    req[[obs$name]][["notes"]] <- obs$notes
+    req[[obs$name]][["analysis"]] <- obs$analysis
+    req[[obs$name]][["grants"]] <- obs$grants
+    req[[obs$name]][["data_path"]] <- obs$data_path
+    out[[i]] <- req
+  }
+  print(pandoc.list(out[[1]]))
+  return(req)
+}
+
