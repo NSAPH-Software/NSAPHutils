@@ -46,4 +46,5 @@ get_cpus <- function() {
 set_threads <- function(nthreads = get_cpus()) {
   setDTthreads(nthreads)
   threads_fst(nr_of_threads = nthreads)
+  RevoUtilsMath::setMKLthreads(nthreads)
 }
