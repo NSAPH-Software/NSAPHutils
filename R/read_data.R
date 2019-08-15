@@ -42,10 +42,11 @@ get_cpus <- function() {
 #'
 #' @param nthreads the number of threads to use
 #'
-#' @importFrom RevoUtilsMath setMKLthreads
 #' @export
 set_threads <- function(nthreads = get_cpus()) {
   setDTthreads(nthreads)
   threads_fst(nr_of_threads = nthreads)
-  RevoUtilsMath::setMKLthreads(nthreads)
+  if ("RevoUtilsMath" %in% row.names(installed.packages())) {
+      RevoUtilsMath::setMKLthreads(nthreads)
+  }
 }

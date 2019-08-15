@@ -8,3 +8,12 @@ License: GPLv3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+Imports:
+    data.table,
+    fst,
+    httr,
+    pander,
+    readr,
+    tools
+Suggests: 
+    RevoUtilsMath
