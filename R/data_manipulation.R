@@ -56,10 +56,12 @@ medicaid_csv_dir_to_fst <- function(path, dict, outdir, pattern) {
                           str_replace(basename(file), ".csv$", ".fst"), 
                           sep = "")
          if(!file.exists(outpath)) {
-           write_fst(fread(file,
-                           col.names = dict[["Column"]],
-                           colClasses = dict[["Rtype"]]),
-                     outpath)
+           f <- fread(file,
+                      col.names = dict[["Column"]],
+                      colClasses = dict[["Rtype"]])
+           write_fst(f, outpath)
+           rm(f)
+           gc()
          }
        }
   )
