@@ -29,7 +29,7 @@ parse_fts <- function(path) {
 }
 
 #' Convert a directory of CMS Medicaid MAX data .csv files to R's fst storage format.
-#' 
+#'
 #' CMS ships Medicaid data as a set of `.csv`` files, one for each state/year. These `.csv``
 #' files are distributed along with `.fts` (File Transport Summary) files containing file
 #' and variable level metadata. This function converts these to `.fst` format to allow
@@ -39,21 +39,21 @@ parse_fts <- function(path) {
 #' @param path The path to the Medicaid data directory for a single year.
 #' @param dict A dictionary as produced by \code{\link{parse_fts}}.
 #' @param outdir The directory to write the `.fst` files to.
-#' @param pattern Regular expression to match `.csv` files to convert. 
-#' Useful for separating `ps` (patient summary) from `ip` (inpatient) data, 
+#' @param pattern Regular expression to match `.csv` files to convert.
+#' Useful for separating `ps` (patient summary) from `ip` (inpatient) data,
 #' as these are stored in the same directory in the origina CMS data.
 #'
 #' @export
 #'
 medicaid_csv_dir_to_fst <- function(path, dict, outdir, pattern) {
-  files <- list.files(path, 
+  files <- list.files(path,
                       pattern = pattern,
                       full.names = TRUE)
   walk(files,
        function(file) {
-         outpath <- str_c(outdir, 
-                          "/", 
-                          str_replace(basename(file), ".csv$", ".fst"), 
+         outpath <- str_c(outdir,
+                          "/",
+                          str_replace(basename(file), ".csv$", ".fst"),
                           sep = "")
          if(!file.exists(outpath)) {
            f <- fread(file,
@@ -81,7 +81,7 @@ medicaid_csv_dir_to_fst <- function(path, dict, outdir, pattern) {
 int_to_zip_str <- function(zip) {
 
   out <- sprintf("%.5d",zip)
-  if (nchar(out) > 5) {
+  if (any(nchar(out) > 5)) {
     out <- sprintf("%.9d",zip)
     out <- substr(out,1,5)
   }
