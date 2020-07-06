@@ -13,8 +13,8 @@ medicaid_csv_dir_to_fst(path, dict, outdir, pattern)
 
 \item{outdir}{The directory to write the `.fst` files to.}
 
-\item{pattern}{Regular expression to match `.csv` files to convert. 
-Useful for separating `ps` (patient summary) from `ip` (inpatient) data, 
+\item{pattern}{Regular expression to match `.csv` files to convert.
+Useful for separating `ps` (patient summary) from `ip` (inpatient) data,
 as these are stored in the same directory in the origina CMS data.}
 }
 \description{

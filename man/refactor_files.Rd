@@ -4,7 +4,7 @@
 \alias{refactor_files}
 \title{refactor multiple files at once}
 \usage{
-refactor_files(path, orig, replace)
+refactor_files(path, orig, replace, pattern = NULL)
 }
 \arguments{
 \item{path}{directory containing files to be refactored}
@@ -12,6 +12,8 @@ refactor_files(path, orig, replace)
 \item{orig}{original text to be refactored}
 
 \item{replace}{text to replace the refactored phrase with}
+
+\item{pattern}{pattern for further identifying files to be refactored}
 }
 \description{
 refactor multiple files at once
