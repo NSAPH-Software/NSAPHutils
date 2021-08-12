@@ -4,8 +4,10 @@
 \alias{data_requests_to_markdown}
 \title{Convert a downloaded Qualtrics csv to a project list markdown file}
 \usage{
-data_requests_to_markdown(file = "NSAPH Health Data Request Form.csv",
-  outfile = "project_list.md")
+data_requests_to_markdown(
+  file = "NSAPH Health Data Request Form.csv",
+  outfile = "project_list.md"
+)
 }
 \arguments{
 \item{file}{path to the csv file containing data requests}
