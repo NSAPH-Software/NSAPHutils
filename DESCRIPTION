@@ -8,7 +8,7 @@ Depends: R (>= 3.5)
 License: GPLv3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Imports:
     data.table,
     fst,
@@ -18,4 +18,6 @@ Imports:
     stringr,
     tools
 Suggests: 
+    testthat (>= 3.0.0),
     RevoUtilsMath
+Config/testthat/edition: 3
