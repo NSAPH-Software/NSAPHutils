@@ -1,5 +1,7 @@
 
 #' @title Calculate Air Quality Index (AQI) and classification
+#' @author Ellen Considine
+#'
 #' @description takes in a vector of concentrations (of either PM2.5 or ozone)
 #' and calculates the AQI, classification (ranging from "Good" to "Hazardous"),
 #' and associated color (ranging from Green to Maroon)
