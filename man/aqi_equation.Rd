@@ -2,7 +2,7 @@
 % Please edit documentation in R/aqi_equation.R
 \name{aqi_equation}
 \alias{aqi_equation}
-\title{Calculate Air Quality Index (AQI) and classification}
+\title{Calculate Air Quality Index (AQI) and Classification}
 \usage{
 aqi_equation(pollutant, concentration)
 }
