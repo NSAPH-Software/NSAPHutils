@@ -17,7 +17,7 @@
 #'
 #' @examples
 #'
-#' s1 <- template_function()
+#' s1 <- template_function(1,2,3)
 #'
 template_function <- function(a,b,c){
   return(sum(a,b,c))

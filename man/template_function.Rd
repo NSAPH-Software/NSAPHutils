@@ -21,7 +21,7 @@ This functions sums three numerical values.
 }
 \examples{
 
-s1 <- template_function()
+s1 <- template_function(1,2,3)
 
 }
 \author{
