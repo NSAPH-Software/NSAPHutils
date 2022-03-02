@@ -88,9 +88,9 @@ aqi_equation<- function(pollutant, concentration){
       }
     })
 
-    DF<- t(DF)
-    DF<- data.frame(apply(DF, MARGIN=2, unlist))
-    DF[,c("Concentration","AQI")]<- apply(DF[,c("Concentration","AQI")],
+    DF <- t(DF)
+    DF <- data.frame(apply(DF, MARGIN=2, unlist))
+    DF[,c("Concentration","AQI")] <- apply(DF[,c("Concentration","AQI")],
                                           MARGIN=2, as.numeric)
 
     return( DF )
